@@ -24,13 +24,13 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2 font-mono text-primary text-glow">
+        <a href="#" className="absolute top-4 left-10 flex items-center gap-2 font-mono text-primary text-glow">
           <Terminal className="h-5 w-5" />
           <span className="font-bold tracking-wider">&lt;ENG/&gt;</span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="absolute top-4 right-10 hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <button
               key={item.href}
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/* Mobile */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="md:hidden ml-auto">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
             </Button>
