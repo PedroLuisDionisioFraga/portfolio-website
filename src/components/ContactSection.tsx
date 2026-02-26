@@ -26,7 +26,7 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// get in touch'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Get in Touch'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
             Let's <span className="text-primary text-glow">Connect</span>
           </h2>

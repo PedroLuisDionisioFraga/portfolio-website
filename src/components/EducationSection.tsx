@@ -28,7 +28,7 @@ const EducationSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// credentials'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Credentials'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
             Education & <span className="text-primary text-glow">Certifications</span>
           </h2>

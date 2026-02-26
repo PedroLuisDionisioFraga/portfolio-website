@@ -61,7 +61,7 @@ const SkillsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// technical skills'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Technical Skills'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
             Tech <span className="text-primary text-glow">Stack</span>
           </h2>

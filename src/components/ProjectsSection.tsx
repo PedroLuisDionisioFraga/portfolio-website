@@ -93,7 +93,7 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// featured projects'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Featured Projects'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
             Selected <span className="text-primary text-glow">Work</span>
           </h2>

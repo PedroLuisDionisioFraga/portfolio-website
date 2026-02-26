@@ -56,7 +56,7 @@ const ExperienceSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// career path'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Career Path'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
             Work <span className="text-primary text-glow">Experience</span>
           </h2>
