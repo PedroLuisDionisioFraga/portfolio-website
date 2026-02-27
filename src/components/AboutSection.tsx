@@ -1,18 +1,25 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Cpu, Layers, Zap, Award } from "lucide-react";
+import { useRef, useState } from "react";
+import { Cpu, Layers, Award, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 
 const stats = [
-  { icon: Cpu, value: "12+", label: "Years Experience" },
-  { icon: Layers, value: "50+", label: "Projects Delivered" },
-  { icon: Zap, value: "8", label: "Patents Filed" },
-  { icon: Award, value: "15+", label: "Certifications" },
+  { icon: Briefcase, value: "3", label: "Years Experience" },
+  { icon: Layers, value: "5+", label: "Projects Delivered" },
+  { icon: Award, value: "3", label: "Certifications" },
+  { icon: Cpu, value: "Jr. Analyst", label: "Current Role" },
+];
+
+const coverLetterParagraphs = [
+  "Currently, I work with firmware development as a junior analyst. My work so far involves firmware testing, bug fixing, and the development of new features.",
+  "In my experience with firmware, I have worked with photocells connected to each other and to a gateway via a mesh network, and the gateway communicated with our APIs via cellular network, where we displayed information on energy consumption in watts, brightness, luminaire status, and dimming, where I performed bench tests and corrected any bugs found. I worked with pulse counters that were connected to simple pulse outputs, for example, in water or gas meters, and communicated with our system via API that used the NB-IoT network as a communication protocol. I have some personal projects with ESP32 and Arduino in the Smart Home area, such as controlling LED strips via Bluetooth, a presence sensor to turn on lights, and an energy sensor to measure energy consumption.",
+  "In my experience with embedded Linux, I participated in the development of the Rockchip PX3 gateway where the photocells connected. I learned and tested the hardware and Linux image in the mesh network connection, cellular network, I/O pins, connection and management of the company's VPN network, certificates and static routes, Ethernet inputs with PoE, and battery control with PMIC.",
 ];
 
 const AboutSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [coverLetterOpen, setCoverLetterOpen] = useState(false);
 
   return (
     <section id="about" className="py-24 relative">
@@ -24,7 +31,7 @@ const AboutSection = () => {
         >
           <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// about me'}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Crafting <span className="text-primary text-glow">Intelligent Hardware</span>
+            Building <span className="text-primary text-glow">Connected Devices</span>
           </h2>
         </motion.div>
 
@@ -34,13 +41,15 @@ const AboutSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* Profile placeholder */}
+            {/* Profile picture */}
             <div className="relative w-64 h-64 mx-auto md:mx-0 rounded-lg border border-primary/30 border-glow overflow-hidden bg-secondary">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Cpu className="w-20 h-20 text-primary/30" />
-              </div>
+              <img
+                src="/profile.jpeg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-background to-transparent">
-                <p className="font-mono text-xs text-primary/60">profile.jpg</p>
+                <p className="font-mono text-xs text-primary/60">profile.jpeg</p>
               </div>
             </div>
           </motion.div>
@@ -52,15 +61,44 @@ const AboutSection = () => {
             className="space-y-4"
           >
             <p className="text-muted-foreground leading-relaxed">
-              Passionate embedded systems engineer with over 12 years of experience designing and
-              developing firmware for resource-constrained devices. I specialize in real-time operating
-              systems, low-power IoT devices, and safety-critical automotive systems.
+              Firmware developer specializing in Silabs, ESP32, and STM microcontrollers, focusing on
+              developing and optimizing firmware, communication protocols (MQTT, Bluetooth, WiFi,
+              cellular, mesh), along with code reviews, project supervision, and test documentation.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              From bare-metal programming on ARM Cortex-M microcontrollers to complex RTOS-based
-              architectures, I bring products from concept to production with a focus on reliability,
-              performance, and power efficiency.
+              Passionate and committed to driving technological advancements to improve performance,
+              consumption, and security of embedded products, with a strong focus on IoT,
+              cybersecurity, and ultra-low-power devices. Open to global opportunities in collaborative
+              environments, whether in-person, remote, or hybrid.
             </p>
+
+            {/* Cover Letter */}
+            <div className="mt-6 rounded-lg border border-primary/20 bg-card overflow-hidden">
+              <button
+                onClick={() => setCoverLetterOpen(!coverLetterOpen)}
+                className="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-primary/5 transition-colors"
+              >
+                <span className="font-mono text-sm text-primary">{'// cover_letter.txt'}</span>
+                {coverLetterOpen ? (
+                  <ChevronUp className="h-4 w-4 text-primary/60" />
+                ) : (
+                  <ChevronDown className="h-4 w-4 text-primary/60" />
+                )}
+              </button>
+              <motion.div
+                initial={false}
+                animate={{ height: coverLetterOpen ? "auto" : 0, opacity: coverLetterOpen ? 1 : 0 }}
+                className="overflow-hidden"
+              >
+                <div className="px-5 pb-5 space-y-3 border-t border-primary/10">
+                  {coverLetterParagraphs.map((p, i) => (
+                    <p key={i} className="text-sm text-muted-foreground leading-relaxed">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 

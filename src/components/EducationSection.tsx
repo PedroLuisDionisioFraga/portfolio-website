@@ -3,17 +3,18 @@ import { useRef } from "react";
 import { GraduationCap, Award } from "lucide-react";
 
 const degrees = [
-  { title: "M.Sc. Electrical Engineering", institution: "MIT", year: "2013", focus: "Embedded Systems & VLSI Design" },
-  { title: "B.Sc. Computer Engineering", institution: "UC Berkeley", year: "2011", focus: "Digital Systems & Microprocessors" },
+  {
+    title: "Bachelor's degree",
+    institution: "Instituto Internacional de Telecomunicações (INATEL)",
+    year: "2025",
+    focus: "Computer Engineering",
+  },
 ];
 
 const certs = [
-  "Certified Embedded Systems Professional (CESP)",
-  "ARM Accredited Engineer (AAE)",
-  "AUTOSAR Certified Developer",
-  "IPC-A-610 Acceptability of Electronic Assemblies",
-  "Functional Safety – ISO 26262 (TÜV)",
-  "AWS IoT Core Specialty",
+  "EmbarcaTECH \u2014 Embedded Systems Training (160h)",
+  "Professional Firmware: From Architecture to Implementation with Patterns and Tests",
+  "Design Patterns for Embedded C (Callback, Component, Object, Semaphore)",
 ];
 
 const EducationSection = () => {

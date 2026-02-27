@@ -80,7 +80,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-mono text-sm">engineer@example.com</p>
+                <p className="font-mono text-sm">pedrodfraga@hotmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -89,20 +89,20 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Location</p>
-                <p className="font-mono text-sm">San Francisco, CA</p>
+                <p className="font-mono text-sm">Santa Rita do Sapucaí - MG, Brazil</p>
               </div>
             </div>
 
             <div className="circuit-line w-full my-6" />
 
             <div className="flex gap-4">
-              <a href="#" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
+              <a href="https://github.com/PedroLuisDionisioFraga" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
                 <Github className="h-5 w-5 text-primary" />
               </a>
-              <a href="#" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
+              <a href="https://www.linkedin.com/in/pedro-luis-dionisio-fraga/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
                 <Linkedin className="h-5 w-5 text-primary" />
               </a>
-              <a href="#" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
+              <a href="mailto:pedrodfraga@hotmail.com" className="p-3 rounded-lg bg-secondary hover:bg-primary/10 border border-border hover:border-primary/30 transition-colors">
                 <Mail className="h-5 w-5 text-primary" />
               </a>
             </div>
