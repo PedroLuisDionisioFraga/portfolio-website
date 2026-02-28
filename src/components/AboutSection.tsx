@@ -64,9 +64,9 @@ const AboutSection = () => {
             <p className="text-muted-foreground leading-relaxed">
               {t("about.description")}
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            {/* <p className="text-muted-foreground leading-relaxed">
               {t("about.openTo")}
-            </p>
+            </p> */}
 
             {/* Cover Letter */}
             <div className="mt-6 rounded-lg border border-primary/20 bg-card overflow-hidden">
