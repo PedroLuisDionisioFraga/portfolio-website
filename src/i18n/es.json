@@ -28,7 +28,7 @@
     "titleHighlight": "Dispositivos Conectados",
     "description": "Especializado en desarrollo de firmware, busco constantemente proyectos para mejorar mis habilidades y aumentar mi experiencia, enfocándome en la mejora del rendimiento, la reducción del consumo energético y la seguridad de datos en productos IoT embebidos, junto con ciberseguridad.",
     "openTo": "Estoy abierto a oportunidades freelance y entornos colaborativos, ya sea presencial, remoto o híbrido.",
-    "coverLetterLabel": "// carta_presentacion.txt",
+    "coverLetterLabel": "// carta_de_presentación.txt",
     "coverLetter": [
       "Actualmente, trabajo con desarrollo de firmware como analista semi-senior. Mi trabajo hasta ahora involucra pruebas de firmware, corrección de errores y el desarrollo de nuevas funcionalidades.",
       "En mi experiencia con firmware, he trabajado con fotocélulas conectadas entre sí y a un gateway a través de una red mesh, y el gateway se comunicaba con nuestras APIs a través de la red celular, donde mostrábamos información sobre consumo de energía en vatios, brillo, estado de la luminaria y regulación de intensidad, donde realicé pruebas de banco y corregí los errores encontrados. Trabajé con contadores de pulsos que estaban conectados a salidas de pulso simples, por ejemplo, en medidores de agua o gas, y se comunicaban con nuestro sistema a través de una API que usaba la red NB-IoT como protocolo de comunicación. Tengo algunos proyectos personales con ESP32 y Arduino en el área de Smart Home, como control de tiras LED por Bluetooth, un sensor de presencia para encender luces y un sensor de energía para medir el consumo energético.",
