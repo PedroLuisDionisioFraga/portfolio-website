@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const specialties = ["Firmware Development", "IoT Systems", "MQTT / BLE / WiFi", "ESP32 · STM32 · Silabs", "Embedded Linux"];
+const specialties = ["Firmware Development", "IoT Systems", "Cellular/MQTT/BLE/WiFi/Mesh", "Silabs · ESP32 · STM32", "Embedded Linux"];
 
 const HeroSection = () => {
   return (
@@ -40,9 +40,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Firmware Developer
+          Embedded System Developer
           <br />
-          <span className="text-primary text-glow">Junior Analyst</span>
+          <span className="text-primary text-glow">Mid-level Embedded Systems Engineer</span>
         </motion.h1>
 
         <motion.div
