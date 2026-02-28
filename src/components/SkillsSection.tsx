@@ -2,14 +2,15 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code, Cpu, Wrench, Radio } from "lucide-react";
 
+// TODO: Think another way to show skill levels, maybe with icons instead of bars, or just a list without levels
 const skillCategories = [
   {
     icon: Code,
     title: "Languages",
     skills: [
-      { name: "C / C++", level: 90 },
+      { name: "C / C++", level: 100 },
+      { name: "Bash / Shell", level: 90 },
       { name: "Python", level: 80 },
-      { name: "Bash / Shell", level: 70 },
       { name: "Rust", level: 55 },
     ],
   },
@@ -17,21 +18,21 @@ const skillCategories = [
     icon: Cpu,
     title: "Platforms / MCUs",
     skills: [
-      { name: "ESP32", level: 90 },
-      { name: "EFR32 / EFM32 (Silabs)", level: 85 },
+      { name: "ESP32", level: 100 },
+      { name: "EFR32 / EFM32 (Silabs)", level: 100 },
       { name: "STM32", level: 80 },
       { name: "RP2040 / RP2350", level: 70 },
-      { name: "Raspberry Pi CM4 / Rockchip PX3-SE", level: 65 },
+      { name: "Raspberry Pi CM4 / Rockchip PX3-SE", level: 60 },
     ],
   },
   {
     icon: Wrench,
     title: "Tools & Frameworks",
     skills: [
-      { name: "Simplicity Studio / ESP-IDF", level: 85 },
+      { name: "VS Code / Simplicity Studio", level: 100 },
       { name: "STMCube / Arduino", level: 80 },
       { name: "CMake / Make / Ninja", level: 75 },
-      { name: "Git / GitHub / GitLab", level: 85 },
+      { name: "Git / GitHub / GitLab", level: 100 },
       { name: "Docker / WSL2", level: 70 },
     ],
   },
