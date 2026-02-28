@@ -4,20 +4,20 @@ import { useRef } from "react";
 const experiences = [
   {
     period: "Feb 2025 – Present",
-    role: "Junior Analyst",
-    company: "Nouvenn",
+    role: "Mid-level Embedded Systems Engineer",
+    company: "Nouvenn IoT",
     highlights: [
-      "Firmware developer specializing in Silabs (EFR32/EFM32), ESP32, and STM microcontrollers",
-      "Developing and optimizing firmware and communication protocols: MQTT, Bluetooth, WiFi, cellular, and mesh",
-      "Conducting code reviews, project supervision, and writing test documentation",
+      "Firmware developer specializing in Silabs (EFR32/EFM32), ESP32, and STM32 microcontrollers",
+      "Developing and optimizing firmware and communication protocols: MQTT, Bluetooth, cellular, Wi-Fi and MESH",
+      "Develop new features, conducting code reviews, fixing found bugs, project supervision, and writing test documentation",
     ],
   },
   {
     period: "Oct 2023 – Jan 2025",
     role: "IoT Firmware Intern",
-    company: "Nouvenn",
+    company: "Nouvenn IoT",
     highlights: [
-      "Developed firmware for photocell mesh networks communicating with cloud APIs via cellular (NB-IoT)",
+      "Testing firmware for photocell mesh networks communicating with cloud APIs via cellular (NB-IoT)",
       "Worked on pulse counter devices for water/gas meters using NB-IoT network protocol",
       "Participated in Rockchip PX3-SE embedded Linux gateway development: mesh, cellular, VPN, PoE, PMIC",
     ],
@@ -25,20 +25,22 @@ const experiences = [
   {
     period: "Jul 2022 – Jun 2023",
     role: "Laboratory Monitor",
-    company: "University — Microcontroller Systems & Electronics",
+    company: "National Institute of Telecommunications (INATEL)",
     highlights: [
-      "Supported students in Microcontroller Systems: state machines, GPIO, interrupts, PWM, ADC, UART/I2C",
-      "Assisted in Introduction to Electronics: diodes, transistors, voltage regulators, filters",
-      "Taught Introduction to Logic Gates with ICs and VHDL/Verilog languages",
+      "Microcontroller Systems: Embedded C programming, state machine, GPIO, interrupts, PWM, ADC, UART/USART and I2C",
+      "Analog Electronics II and III: Circuit analysis with diodes, transistors, op-amps, filters, oscillators, power supplies, logical ports",
+      "Oriented Object Programming: Java programming, OOP concepts, design patterns and UML diagrams",
+      "Python Programming: OOP concepts, data structures, data analysis, algorithms and UML",
     ],
   },
   {
     period: "May 2022 – Oct 2023",
     role: "Undergraduate Research Fellow",
-    company: "University",
+    company: "National Institute of Telecommunications (INATEL)",
     highlights: [
       "Smart Farm: mobile app with embedded system integration via MQTT protocol",
       "Park Here: YoloV8-based parking space analysis integrated with a mobile application",
+      "Smart Lab: Next.js web app integrated with server and SQL database for managing lab environment",
       "Energy Consumption Prediction: LSTM and GRU models for energy forecasting based on historical data",
     ],
   },
