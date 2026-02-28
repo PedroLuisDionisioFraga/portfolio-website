@@ -1,12 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code, Cpu, Wrench, Radio } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 // TODO: Think another way to show skill levels, maybe with icons instead of bars, or just a list without levels
 const skillCategories = [
   {
     icon: Code,
-    title: "Languages",
+    titleKey: "skills.categories.languages",
     skills: [
       { name: "C / C++", level: 100 },
       { name: "Bash / Shell", level: 90 },
@@ -16,7 +17,7 @@ const skillCategories = [
   },
   {
     icon: Cpu,
-    title: "Platforms / MCUs",
+    titleKey: "skills.categories.platforms",
     skills: [
       { name: "ESP32", level: 100 },
       { name: "EFR32 / EFM32 (Silabs)", level: 100 },
@@ -27,7 +28,7 @@ const skillCategories = [
   },
   {
     icon: Wrench,
-    title: "Tools & Frameworks",
+    titleKey: "skills.categories.tools",
     skills: [
       { name: "VS Code / Simplicity Studio", level: 100 },
       { name: "STMCube / Arduino", level: 80 },
@@ -38,7 +39,7 @@ const skillCategories = [
   },
   {
     icon: Radio,
-    title: "Protocols",
+    titleKey: "skills.categories.protocols",
     skills: [
       { name: "UART / SPI / I2C / CAN", level: 90 },
       { name: "MQTT", level: 90 },
@@ -50,6 +51,7 @@ const skillCategories = [
 ];
 
 const SkillsSection = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -61,16 +63,16 @@ const SkillsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Technical Skills'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{t("skills.tag")}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Tech <span className="text-primary text-glow">Stack</span>
+            {t("skills.titleStart")}<span className="text-primary text-glow">{t("skills.titleHighlight")}</span>
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((cat, ci) => (
             <motion.div
-              key={cat.title}
+              key={cat.titleKey}
               className="p-6 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors"
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -78,7 +80,7 @@ const SkillsSection = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <cat.icon className="h-5 w-5 text-primary" />
-                <h3 className="text-lg font-bold font-mono">{cat.title}</h3>
+                <h3 className="text-lg font-bold font-mono">{t(cat.titleKey)}</h3>
               </div>
               <div className="space-y-4">
                 {cat.skills.map((skill) => (

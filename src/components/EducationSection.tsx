@@ -1,25 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Award } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const degrees = [
-  {
-    title: "Bachelor's degree",
-    institution: "Instituto Internacional de Telecomunicações (INATEL)",
-    year: "2025",
-    focus: "Computer Engineering",
-  },
-];
-
-const certs = [
-  "EmbarcaTECH \u2014 Embedded Systems Training (160h)",
-  "Professional Firmware: From Architecture to Implementation with Patterns and Tests",
-  "Design Patterns for Embedded C (Callback, Component, Object, Semaphore)",
-];
+const degreeKeys = ["bsc"] as const;
 
 const EducationSection = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const certs = t("education.certs", { returnObjects: true }) as string[];
 
   return (
     <section id="education" className="py-24 relative">
@@ -29,9 +20,9 @@ const EducationSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Credentials'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{t("education.tag")}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Education & <span className="text-primary text-glow">Certifications</span>
+            {t("education.titleStart")}<span className="text-primary text-glow">{t("education.titleHighlight")}</span>
           </h2>
         </motion.div>
 
@@ -44,13 +35,13 @@ const EducationSection = () => {
             className="space-y-4"
           >
             <h3 className="flex items-center gap-2 text-lg font-bold font-mono mb-6">
-              <GraduationCap className="h-5 w-5 text-primary" /> Degrees
+              <GraduationCap className="h-5 w-5 text-primary" /> {t("education.degreesLabel")}
             </h3>
-            {degrees.map((d) => (
-              <div key={d.title} className="p-5 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
-                <p className="font-bold">{d.title}</p>
-                <p className="text-sm text-muted-foreground">{d.institution} · {d.year}</p>
-                <p className="text-xs text-primary/70 font-mono mt-1">{d.focus}</p>
+            {degreeKeys.map((key) => (
+              <div key={key} className="p-5 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
+                <p className="font-bold">{t(`education.degrees.${key}.title`)}</p>
+                <p className="text-sm text-muted-foreground">{t(`education.degrees.${key}.institution`)} · {t(`education.degrees.${key}.year`)}</p>
+                <p className="text-xs text-primary/70 font-mono mt-1">{t(`education.degrees.${key}.focus`)}</p>
               </div>
             ))}
           </motion.div>
@@ -62,7 +53,7 @@ const EducationSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="flex items-center gap-2 text-lg font-bold font-mono mb-6">
-              <Award className="h-5 w-5 text-primary" /> Certifications
+              <Award className="h-5 w-5 text-primary" /> {t("education.certsLabel")}
             </h3>
             <div className="space-y-3">
               {certs.map((c) => (

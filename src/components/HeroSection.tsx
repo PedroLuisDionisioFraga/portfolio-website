@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
-const specialties = ["Firmware Development", "IoT Systems", "Cellular/MQTT/BLE/WiFi/Mesh", "Silabs/ESP32/STM32/Arduino", "Embedded Linux"];
+const specialtyKeys = ["firmware", "iot", "protocols", "platforms", "linux"] as const;
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
       {/* Animated circuit lines */}
@@ -31,7 +34,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {'> Hello, World'}
+          {t("hero.greeting")}
         </motion.p>
 
         <motion.h1
@@ -40,9 +43,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Embedded Developer
+          {t("hero.title")}
           <br />
-          <span className="text-primary text-glow">Mid-level Analyst</span>
+          <span className="text-primary text-glow">{t("hero.subtitle")}</span>
         </motion.h1>
 
         <motion.div
@@ -51,15 +54,15 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {specialties.map((s, i) => (
+          {specialtyKeys.map((key, i) => (
             <motion.span
-              key={s}
+              key={key}
               className="px-3 py-1 text-xs font-mono border border-primary/30 rounded-full text-primary/80"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 + i * 0.1 }}
             >
-              {s}
+              {t(`hero.specialties.${key}`)}
             </motion.span>
           ))}
         </motion.div>
@@ -75,7 +78,7 @@ const HeroSection = () => {
             className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 border-glow"
             onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
           >
-            View Projects
+            {t("hero.viewProjects")}
           </Button>
           <Button
             size="lg"
@@ -83,7 +86,7 @@ const HeroSection = () => {
             className="font-mono border-primary/50 text-primary hover:bg-primary/10"
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Contact Me
+            {t("hero.contactMe")}
           </Button>
         </motion.div>
       </div>

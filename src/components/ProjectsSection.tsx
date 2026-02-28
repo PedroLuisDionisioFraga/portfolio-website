@@ -1,42 +1,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, ChevronUp, Wifi, Zap, BarChart2, Home, PhoneIcon, TableCellsSplit } from "lucide-react";
-import { Cell } from "recharts";
+import { ChevronDown, ChevronUp, Wifi, Zap, BarChart2, TableCellsSplit } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import type { LucideIcon } from "lucide-react";
 
-const projects = [
-  {
-    icon: Wifi,
-    title: "Smart Farm",
-    summary: "Mobile application with embedded system integration via MQTT protocol for remote farm monitoring.",
-    details: "Developed during my undergraduate research fellowship. Integrated an ESP32 dev board with a mobile app using MQTT for lightweight, real-time data exchange. The system enabled remote monitoring and control of farm sensors, bridging hardware and software layers.",
-    tags: ["ESP32", "Wi-Fi", "MQTT", "DHT11", "LDR", "HD-38", "IoT"],
-  },
-  {
-    icon: BarChart2,
-    title: "Park Here",
-    summary: "YoloV8-based parking space analysis system integrated with a mobile application.",
-    details: "Used YoloV8 object detection to identify occupied and available parking spaces from camera feeds. Integrated real-time analysis results with a mobile application, displaying live occupancy data. Focused on applying computer vision in a practical urban mobility use case.",
-    tags: ["Python", "YoloV8", "Computer Vision", "Mobile", "Parking"],
-  },
-  {
-    icon: Zap,
-    title: "Energy Consumption Prediction",
-    summary: "LSTM and GRU neural networks for energy consumption forecasting based on historical data.",
-    details: "Also developed during my undergraduate research fellowship. Implemented and compared LSTM and GRU recurrent architectures to predict energy usage patterns. Trained on time-series datasets of past consumption. The model outputs short-term forecasts useful for demand planning and efficiency improvements in smart grid applications.",
-    tags: ["Python", "LSTM", "GRU", "Machine Learning", "Time-Series"],
-  },
-  {
-    icon: TableCellsSplit,
-    title: "Smart Lab",
-    summary: "Web application built with Next.js, integrated with a server and SQL database for managing lab system.",
-    details: "A Next.js web application developed and integrated with a backend server and a SQL database to handle user authentication, device management, and data logging to manage a smart lab environment, such as lab access, air conditioning, power consumption per workbench, opening and closing curtains, and turning the television on and off using an IR sensor.",
-    tags: ["JavaScript", "Next.js", "Web", "VS1838B KY-022", "KY-005"],
-  },
+const projectDefs = [
+  { icon: Wifi, key: "smartFarm", tags: ["ESP32", "Wi-Fi", "MQTT", "DHT11", "LDR", "HD-38", "IoT"] },
+  { icon: BarChart2, key: "parkHere", tags: ["Python", "YoloV8", "Computer Vision", "Mobile", "Parking"] },
+  { icon: Zap, key: "energyPrediction", tags: ["Python", "LSTM", "GRU", "Machine Learning", "Time-Series"] },
+  { icon: TableCellsSplit, key: "smartLab", tags: ["JavaScript", "Next.js", "Web", "VS1838B KY-022", "KY-005"] },
   // TODO: Add my personal projects
 ];
 
-const ProjectCard = ({ project, index, inView }: { project: typeof projects[0]; index: number; inView: boolean }) => {
+interface ProjectCardProps {
+  icon: LucideIcon;
+  translationKey: string;
+  tags: string[];
+  index: number;
+  inView: boolean;
+}
+
+const ProjectCard = ({ icon: Icon, translationKey, tags, index, inView }: ProjectCardProps) => {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -49,29 +35,29 @@ const ProjectCard = ({ project, index, inView }: { project: typeof projects[0]; 
     >
       <div className="flex items-start gap-4">
         <div className="p-3 rounded-lg bg-secondary">
-          <project.icon className="h-6 w-6 text-primary" />
+          <Icon className="h-6 w-6 text-primary" />
         </div>
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold">{project.title}</h3>
+            <h3 className="text-lg font-bold">{t(`projects.items.${translationKey}.title`)}</h3>
             {expanded ? (
               <ChevronUp className="h-4 w-4 text-muted-foreground" />
             ) : (
               <ChevronDown className="h-4 w-4 text-muted-foreground" />
             )}
           </div>
-          <p className="text-sm text-muted-foreground mt-1">{project.summary}</p>
+          <p className="text-sm text-muted-foreground mt-1">{t(`projects.items.${translationKey}.summary`)}</p>
 
           <motion.div
             initial={false}
             animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
             className="overflow-hidden"
           >
-            <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{project.details}</p>
+            <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{t(`projects.items.${translationKey}.details`)}</p>
           </motion.div>
 
           <div className="flex flex-wrap gap-2 mt-4">
-            {project.tags.map((tag) => (
+            {tags.map((tag) => (
               <Badge key={tag} variant="outline" className="font-mono text-xs border-primary/30 text-primary/80">
                 {tag}
               </Badge>
@@ -84,6 +70,7 @@ const ProjectCard = ({ project, index, inView }: { project: typeof projects[0]; 
 };
 
 const ProjectsSection = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -95,15 +82,15 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Featured Projects'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{t("projects.tag")}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Selected <span className="text-primary text-glow">Work</span>
+            {t("projects.titleStart")}<span className="text-primary text-glow">{t("projects.titleHighlight")}</span>
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} inView={inView} />
+          {projectDefs.map((project, i) => (
+            <ProjectCard key={project.key} icon={project.icon} translationKey={project.key} tags={project.tags} index={i} inView={inView} />
           ))}
         </div>
       </div>

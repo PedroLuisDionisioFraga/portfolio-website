@@ -1,19 +1,64 @@
 import { useState } from "react";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, Terminal, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
 
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+const navKeys = [
+  { key: "nav.about", href: "#about" },
+  { key: "nav.skills", href: "#skills" },
+  { key: "nav.projects", href: "#projects" },
+  { key: "nav.experience", href: "#experience" },
+  { key: "nav.education", href: "#education" },
+  { key: "nav.contact", href: "#contact" },
 ];
+
+const languages = [
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "pt-BR", label: "Português", flag: "🇧🇷" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+];
+
+const LanguageDropdown = () => {
+  const { i18n } = useTranslation();
+  const current = languages.find((l) => l.code === i18n.language) ?? languages[0];
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="mr-2 flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold border border-primary/40 rounded-full text-primary hover:bg-primary/10 transition-colors">
+          <Globe className="h-3.5 w-3.5" />
+          <span>{current.flag} {current.code.toUpperCase()}</span>
+          <ChevronDown className="h-3 w-3" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="min-w-[140px] bg-background border-border">
+        {languages.map((lang) => (
+          <DropdownMenuItem
+            key={lang.code}
+            onClick={() => i18n.changeLanguage(lang.code)}
+            className={`font-mono text-xs cursor-pointer ${
+              i18n.language === lang.code ? "text-primary font-bold" : "text-muted-foreground"
+            }`}
+          >
+            <span className="mr-2">{lang.flag}</span>
+            {lang.label}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const scrollTo = (href: string) => {
     setOpen(false);
@@ -31,13 +76,14 @@ const Navbar = () => {
 
         {/* Desktop */}
         <div className="absolute top-4 right-10 hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
+          <LanguageDropdown />
+          {navKeys.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollTo(item.href)}
               className="px-3 py-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
             >
-              {item.label}
+              {t(item.key)}
             </button>
           ))}
         </div>
@@ -50,17 +96,33 @@ const Navbar = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="bg-background border-border">
-            <SheetTitle className="text-primary font-mono">Navigation</SheetTitle>
+            <SheetTitle className="text-primary font-mono">{t("nav.navigation")}</SheetTitle>
             <div className="mt-8 flex flex-col gap-4">
-              {navItems.map((item) => (
+              {navKeys.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollTo(item.href)}
                   className="text-left px-3 py-2 font-mono text-muted-foreground hover:text-primary transition-colors"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </button>
               ))}
+              <div className="mt-4 space-y-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => i18n.changeLanguage(lang.code)}
+                    className={`flex items-center gap-2 px-3 py-2 text-sm font-mono rounded-lg transition-colors w-full text-left ${
+                      i18n.language === lang.code
+                        ? "text-primary font-bold bg-primary/10 border border-primary/30"
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </SheetContent>
         </Sheet>

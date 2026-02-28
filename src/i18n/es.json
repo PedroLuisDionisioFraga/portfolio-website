@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Formación",
+    "contact": "Contacto",
+    "navigation": "Navegación"
+  },
+  "hero": {
+    "greeting": "> Hello, World!",
+    "title": "Desarrollador Embebido",
+    "subtitle": "Analista Semi-Senior",
+    "viewProjects": "Ver Proyectos",
+    "contactMe": "Contáctame",
+    "specialties": {
+      "firmware": "Desarrollo de Firmware",
+      "iot": "Sistemas IoT",
+      "protocols": "Celular/MQTT/BLE/WiFi/Mesh",
+      "platforms": "Silabs/ESP32/STM32/Arduino",
+      "linux": "Linux Embebido"
+    }
+  },
+  "about": {
+    "tag": "// Sobre mí",
+    "titleStart": "Construyendo ",
+    "titleHighlight": "Dispositivos Conectados",
+    "description": "Especializado en desarrollo de firmware, busco constantemente proyectos para mejorar mis habilidades y aumentar mi experiencia, enfocándome en la mejora del rendimiento, la reducción del consumo energético y la seguridad de datos en productos IoT embebidos, junto con ciberseguridad.",
+    "openTo": "Estoy abierto a oportunidades freelance y entornos colaborativos, ya sea presencial, remoto o híbrido.",
+    "coverLetterLabel": "// carta_presentacion.txt",
+    "coverLetter": [
+      "Actualmente, trabajo con desarrollo de firmware como analista semi-senior. Mi trabajo hasta ahora involucra pruebas de firmware, corrección de errores y el desarrollo de nuevas funcionalidades.",
+      "En mi experiencia con firmware, he trabajado con fotocélulas conectadas entre sí y a un gateway a través de una red mesh, y el gateway se comunicaba con nuestras APIs a través de la red celular, donde mostrábamos información sobre consumo de energía en vatios, brillo, estado de la luminaria y regulación de intensidad, donde realicé pruebas de banco y corregí los errores encontrados. Trabajé con contadores de pulsos que estaban conectados a salidas de pulso simples, por ejemplo, en medidores de agua o gas, y se comunicaban con nuestro sistema a través de una API que usaba la red NB-IoT como protocolo de comunicación. Tengo algunos proyectos personales con ESP32 y Arduino en el área de Smart Home, como control de tiras LED por Bluetooth, un sensor de presencia para encender luces y un sensor de energía para medir el consumo energético.",
+      "En mi experiencia con Linux embebido, participé en el desarrollo del gateway Rockchip PX3 donde se conectaban las fotocélulas. Aprendí y probé el hardware y la imagen de Linux en la conexión de red mesh, red celular, pines de E/S, conexión y gestión de la red VPN de la empresa, certificados y rutas estáticas, entradas Ethernet con PoE y control de batería con PMIC."
+    ],
+    "stats": {
+      "yearsExperience": "Años de Experiencia",
+      "projectsDelivered": "Proyectos Entregados",
+      "certifications": "Certificaciones",
+      "currentRole": "Cargo Actual"
+    },
+    "profileAlt": "Perfil"
+  },
+  "skills": {
+    "tag": "// Habilidades Técnicas",
+    "titleStart": "Stack ",
+    "titleHighlight": "Tecnológico",
+    "categories": {
+      "languages": "Lenguajes",
+      "platforms": "Plataformas / MCUs",
+      "tools": "Herramientas & Frameworks",
+      "protocols": "Protocolos"
+    }
+  },
+  "projects": {
+    "tag": "// Proyectos Destacados",
+    "titleStart": "Trabajos ",
+    "titleHighlight": "Seleccionados",
+    "items": {
+      "smartFarm": {
+        "title": "Smart Farm",
+        "summary": "Aplicación móvil con integración de sistema embebido a través del protocolo MQTT para monitoreo remoto de granja.",
+        "details": "Desarrollado durante mi beca de investigación de grado. Integré una placa de desarrollo ESP32 con una aplicación móvil usando MQTT para intercambio de datos ligero y en tiempo real. El sistema permitió el monitoreo y control remoto de sensores agrícolas, conectando capas de hardware y software."
+      },
+      "parkHere": {
+        "title": "Park Here",
+        "summary": "Sistema de análisis de espacios de estacionamiento basado en YoloV8 integrado con aplicación móvil.",
+        "details": "Utilicé detección de objetos YoloV8 para identificar espacios de estacionamiento ocupados y disponibles a partir de cámaras. Integré los resultados del análisis en tiempo real con una aplicación móvil, mostrando datos de ocupación en vivo. Me enfoqué en aplicar visión por computadora en un caso práctico de movilidad urbana."
+      },
+      "energyPrediction": {
+        "title": "Predicción de Consumo de Energía",
+        "summary": "Redes neuronales LSTM y GRU para predicción de consumo de energía basada en datos históricos.",
+        "details": "También desarrollado durante mi beca de investigación. Implementé y comparé arquitecturas recurrentes LSTM y GRU para predecir patrones de uso de energía. Entrenado con conjuntos de datos de series temporales de consumo pasado. El modelo genera predicciones a corto plazo útiles para planificación de demanda y mejoras de eficiencia en aplicaciones de redes inteligentes."
+      },
+      "smartLab": {
+        "title": "Smart Lab",
+        "summary": "Aplicación web construida con Next.js, integrada con servidor y base de datos SQL para gestión de laboratorio.",
+        "details": "Una aplicación web Next.js desarrollada e integrada con un servidor backend y base de datos SQL para manejar autenticación de usuarios, gestión de dispositivos y registro de datos para administrar un entorno de laboratorio inteligente, como acceso al laboratorio, aire acondicionado, consumo de energía por banco de trabajo, apertura y cierre de cortinas y encendido y apagado de la televisión usando un sensor IR."
+      }
+    }
+  },
+  "experience": {
+    "tag": "// Trayectoria Profesional",
+    "titleStart": "Experiencia ",
+    "titleHighlight": "Profesional",
+    "items": {
+      "nouvennMid": {
+        "period": "Feb 2025 – Presente",
+        "role": "Ingeniero de Sistemas Embebidos Semi-Senior",
+        "company": "Nouvenn IoT",
+        "highlights": [
+          "Desarrollador de firmware especializado en microcontroladores Silabs (EFR32/EFM32), ESP32 y STM32",
+          "Desarrollando y optimizando firmware y protocolos de comunicación: MQTT, Bluetooth, celular, Wi-Fi y MESH",
+          "Desarrollo de nuevas funcionalidades, revisión de código, corrección de errores, supervisión de proyectos y redacción de documentación de pruebas"
+        ]
+      },
+      "nouvennIntern": {
+        "period": "Oct 2023 – Ene 2025",
+        "role": "Pasante de Firmware IoT",
+        "company": "Nouvenn IoT",
+        "highlights": [
+          "Pruebas de firmware para redes mesh de fotocélulas comunicándose con APIs en la nube vía celular (NB-IoT)",
+          "Trabajé con dispositivos contadores de pulso para medidores de agua/gas usando protocolo de red NB-IoT",
+          "Participé en el desarrollo del gateway Linux embebido Rockchip PX3-SE: mesh, celular, VPN, PoE, PMIC"
+        ]
+      },
+      "inatelMonitor": {
+        "period": "Jul 2022 – Jun 2023",
+        "role": "Monitor de Laboratorio",
+        "company": "Instituto Nacional de Telecomunicaciones (INATEL)",
+        "highlights": [
+          "Sistemas Microcontrolados: Programación en C embebido, máquina de estados, GPIO, interrupciones, PWM, ADC, UART/USART e I2C",
+          "Electrónica Analógica II y III: Análisis de circuitos con diodos, transistores, amp-ops, filtros, osciladores, fuentes de alimentación, puertas lógicas",
+          "Programación Orientada a Objetos: Programación en Java, conceptos de POO, patrones de diseño y diagramas UML",
+          "Programación Python: Conceptos de POO, estructuras de datos, análisis de datos, algoritmos y UML"
+        ]
+      },
+      "inatelResearch": {
+        "period": "May 2022 – Oct 2023",
+        "role": "Becario de Investigación",
+        "company": "Instituto Nacional de Telecomunicaciones (INATEL)",
+        "highlights": [
+          "Smart Farm: aplicación móvil con integración de sistema embebido vía protocolo MQTT",
+          "Park Here: análisis de espacios de estacionamiento basado en YoloV8 integrado con aplicación móvil",
+          "Smart Lab: aplicación web Next.js integrada con servidor y base de datos SQL para gestión de entorno de laboratorio",
+          "Predicción de Consumo de Energía: modelos LSTM y GRU para predicción de energía basada en datos históricos"
+        ]
+      }
+    }
+  },
+  "education": {
+    "tag": "// Credenciales",
+    "titleStart": "Formación & ",
+    "titleHighlight": "Certificaciones",
+    "degreesLabel": "Títulos",
+    "certsLabel": "Certificaciones",
+    "degrees": {
+      "bsc": {
+        "title": "Licenciatura",
+        "institution": "Instituto Nacional de Telecomunicaciones (INATEL)",
+        "year": "2025",
+        "focus": "Ingeniería en Computación"
+      }
+    },
+    "certs": [
+      "EmbarcaTECH — Capacitación en Sistemas Embebidos (160h)",
+      "Firmware Profesional: De la Arquitectura a la Implementación con Patrones y Pruebas",
+      "Patrones de Diseño para C Embebido (Callback, Componente, Objeto, Semáforo)"
+    ]
+  },
+  "contact": {
+    "tag": "// Ponte en Contacto",
+    "titleStart": "Vamos a ",
+    "titleHighlight": "Conectar",
+    "namePlaceholder": "Tu Nombre",
+    "emailPlaceholder": "Tu Email",
+    "messagePlaceholder": "Tu Mensaje",
+    "send": "Enviar Mensaje",
+    "toastTitle": "¡Mensaje enviado!",
+    "toastDescription": "Gracias por contactarme. Te responderé pronto.",
+    "emailLabel": "Email",
+    "locationLabel": "Ubicación",
+    "location": "Santa Rita do Sapucaí - MG, Brasil"
+  },
+  "footer": {
+    "builtWith": "Hecho con precisión"
+  }
+}

@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
@@ -14,7 +16,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon." });
+    toast({ title: t("contact.toastTitle"), description: t("contact.toastDescription") });
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -26,9 +28,9 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{'// Get in Touch'}</p>
+          <p className="font-mono text-primary text-sm mb-2 tracking-wider">{t("contact.tag")}</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Let's <span className="text-primary text-glow">Connect</span>
+            {t("contact.titleStart")}<span className="text-primary text-glow">{t("contact.titleHighlight")}</span>
           </h2>
         </motion.div>
 
@@ -41,7 +43,7 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Input
-              placeholder="Your Name"
+              placeholder={t("contact.namePlaceholder")}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
@@ -49,14 +51,14 @@ const ContactSection = () => {
             />
             <Input
               type="email"
-              placeholder="Your Email"
+              placeholder={t("contact.emailPlaceholder")}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
               className="bg-card border-border focus:border-primary"
             />
             <Textarea
-              placeholder="Your Message"
+              placeholder={t("contact.messagePlaceholder")}
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -64,7 +66,7 @@ const ContactSection = () => {
               className="bg-card border-border focus:border-primary"
             />
             <Button type="submit" className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 border-glow w-full">
-              <Send className="h-4 w-4 mr-2" /> Send Message
+              <Send className="h-4 w-4 mr-2" /> {t("contact.send")}
             </Button>
           </motion.form>
 
@@ -79,7 +81,7 @@ const ContactSection = () => {
                 <Mail className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Email</p>
+                <p className="text-sm text-muted-foreground">{t("contact.emailLabel")}</p>
                 <p className="font-mono text-sm">pedrodfraga@hotmail.com</p>
               </div>
             </div>
@@ -88,8 +90,8 @@ const ContactSection = () => {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Location</p>
-                <p className="font-mono text-sm">Santa Rita do Sapucaí - MG, Brazil</p>
+                <p className="text-sm text-muted-foreground">{t("contact.locationLabel")}</p>
+                <p className="font-mono text-sm">{t("contact.location")}</p>
               </div>
             </div>
 

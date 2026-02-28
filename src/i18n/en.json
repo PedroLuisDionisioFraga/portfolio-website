@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact",
+    "navigation": "Navigation"
+  },
+  "hero": {
+    "greeting": "> Hello, World!",
+    "title": "Embedded Developer",
+    "subtitle": "Mid-level Analyst",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "specialties": {
+      "firmware": "Firmware Development",
+      "iot": "IoT Systems",
+      "protocols": "Cellular/MQTT/BLE/WiFi/Mesh",
+      "platforms": "Silabs/ESP32/STM32/Arduino",
+      "linux": "Embedded Linux"
+    }
+  },
+  "about": {
+    "tag": "// About Me",
+    "titleStart": "Building ",
+    "titleHighlight": "Connected Devices",
+    "description": "Specialized in firmware development, I am constantly seeking projects to enhance my skills and increase my experience, focusing on performance improvement, reduced power consumption, and data security in embedded IoT products, along with cybersecurity.",
+    "openTo": "I am open to freelance opportunities and collaborative environments, whether on-site, remote, or hybrid.",
+    "coverLetterLabel": "// cover_letter.txt",
+    "coverLetter": [
+      "Currently, I work with firmware development as a Mid-level analyst. My work so far involves firmware testing, bug fixing, and the development of new features.",
+      "In my experience with firmware, I have worked with photocells connected to each other and to a gateway via a mesh network, and the gateway communicated with our APIs via cellular network, where we displayed information on energy consumption in watts, brightness, luminaire status, and dimming, where I performed bench tests and corrected any bugs found. I worked with pulse counters that were connected to simple pulse outputs, for example, in water or gas meters, and communicated with our system via API that used the NB-IoT network as a communication protocol. I have some personal projects with ESP32 and Arduino in the Smart Home area, such as controlling LED strips via Bluetooth, a presence sensor to turn on lights, and an energy sensor to measure energy consumption.",
+      "In my experience with embedded Linux, I participated in the development of the Rockchip PX3 gateway where the photocells connected. I learned and tested the hardware and Linux image in the mesh network connection, cellular network, I/O pins, connection and management of the company's VPN network, certificates and static routes, Ethernet inputs with PoE, and battery control with PMIC."
+    ],
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "projectsDelivered": "Projects Delivered",
+      "certifications": "Certifications",
+      "currentRole": "Current Role"
+    },
+    "profileAlt": "Profile"
+  },
+  "skills": {
+    "tag": "// Technical Skills",
+    "titleStart": "Tech ",
+    "titleHighlight": "Stack",
+    "categories": {
+      "languages": "Languages",
+      "platforms": "Platforms / MCUs",
+      "tools": "Tools & Frameworks",
+      "protocols": "Protocols"
+    }
+  },
+  "projects": {
+    "tag": "// Featured Projects",
+    "titleStart": "Selected ",
+    "titleHighlight": "Work",
+    "items": {
+      "smartFarm": {
+        "title": "Smart Farm",
+        "summary": "Mobile application with embedded system integration via MQTT protocol for remote farm monitoring.",
+        "details": "Developed during my undergraduate research fellowship. Integrated an ESP32 dev board with a mobile app using MQTT for lightweight, real-time data exchange. The system enabled remote monitoring and control of farm sensors, bridging hardware and software layers."
+      },
+      "parkHere": {
+        "title": "Park Here",
+        "summary": "YoloV8-based parking space analysis system integrated with a mobile application.",
+        "details": "Used YoloV8 object detection to identify occupied and available parking spaces from camera feeds. Integrated real-time analysis results with a mobile application, displaying live occupancy data. Focused on applying computer vision in a practical urban mobility use case."
+      },
+      "energyPrediction": {
+        "title": "Energy Consumption Prediction",
+        "summary": "LSTM and GRU neural networks for energy consumption forecasting based on historical data.",
+        "details": "Also developed during my undergraduate research fellowship. Implemented and compared LSTM and GRU recurrent architectures to predict energy usage patterns. Trained on time-series datasets of past consumption. The model outputs short-term forecasts useful for demand planning and efficiency improvements in smart grid applications."
+      },
+      "smartLab": {
+        "title": "Smart Lab",
+        "summary": "Web application built with Next.js, integrated with a server and SQL database for managing lab system.",
+        "details": "A Next.js web application developed and integrated with a backend server and a SQL database to handle user authentication, device management, and data logging to manage a smart lab environment, such as lab access, air conditioning, power consumption per workbench, opening and closing curtains, and turning the television on and off using an IR sensor."
+      }
+    }
+  },
+  "experience": {
+    "tag": "// Career Path",
+    "titleStart": "Work ",
+    "titleHighlight": "Experience",
+    "items": {
+      "nouvennMid": {
+        "period": "Feb 2025 – Present",
+        "role": "Mid-level Embedded Systems Engineer",
+        "company": "Nouvenn IoT",
+        "highlights": [
+          "Firmware developer specializing in Silabs (EFR32/EFM32), ESP32, and STM32 microcontrollers",
+          "Developing and optimizing firmware and communication protocols: MQTT, Bluetooth, cellular, Wi-Fi and MESH",
+          "Develop new features, conducting code reviews, fixing found bugs, project supervision, and writing test documentation"
+        ]
+      },
+      "nouvennIntern": {
+        "period": "Oct 2023 – Jan 2025",
+        "role": "IoT Firmware Intern",
+        "company": "Nouvenn IoT",
+        "highlights": [
+          "Testing firmware for photocell mesh networks communicating with cloud APIs via cellular (NB-IoT)",
+          "Worked on pulse counter devices for water/gas meters using NB-IoT network protocol",
+          "Participated in Rockchip PX3-SE embedded Linux gateway development: mesh, cellular, VPN, PoE, PMIC"
+        ]
+      },
+      "inatelMonitor": {
+        "period": "Jul 2022 – Jun 2023",
+        "role": "Laboratory Monitor",
+        "company": "National Institute of Telecommunications (INATEL)",
+        "highlights": [
+          "Microcontroller Systems: Embedded C programming, state machine, GPIO, interrupts, PWM, ADC, UART/USART and I2C",
+          "Analog Electronics II and III: Circuit analysis with diodes, transistors, op-amps, filters, oscillators, power supplies, logical ports",
+          "Oriented Object Programming: Java programming, OOP concepts, design patterns and UML diagrams",
+          "Python Programming: OOP concepts, data structures, data analysis, algorithms and UML"
+        ]
+      },
+      "inatelResearch": {
+        "period": "May 2022 – Oct 2023",
+        "role": "Undergraduate Research Fellow",
+        "company": "National Institute of Telecommunications (INATEL)",
+        "highlights": [
+          "Smart Farm: mobile app with embedded system integration via MQTT protocol",
+          "Park Here: YoloV8-based parking space analysis integrated with a mobile application",
+          "Smart Lab: Next.js web app integrated with server and SQL database for managing lab environment",
+          "Energy Consumption Prediction: LSTM and GRU models for energy forecasting based on historical data"
+        ]
+      }
+    }
+  },
+  "education": {
+    "tag": "// Credentials",
+    "titleStart": "Education & ",
+    "titleHighlight": "Certifications",
+    "degreesLabel": "Degrees",
+    "certsLabel": "Certifications",
+    "degrees": {
+      "bsc": {
+        "title": "Bachelor's degree",
+        "institution": "Instituto Internacional de Telecomunicações (INATEL)",
+        "year": "2025",
+        "focus": "Computer Engineering"
+      }
+    },
+    "certs": [
+      "EmbarcaTECH — Embedded Systems Training (160h)",
+      "Professional Firmware: From Architecture to Implementation with Patterns and Tests",
+      "Design Patterns for Embedded C (Callback, Component, Object, Semaphore)"
+    ]
+  },
+  "contact": {
+    "tag": "// Get in Touch",
+    "titleStart": "Let's ",
+    "titleHighlight": "Connect",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "send": "Send Message",
+    "toastTitle": "Message sent!",
+    "toastDescription": "Thank you for reaching out. I'll get back to you soon.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "location": "Santa Rita do Sapucaí - MG, Brazil"
+  },
+  "footer": {
+    "builtWith": "Built with precision"
+  }
+}
