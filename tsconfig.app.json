@@ -22,7 +22,7 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": false,
 
-    "baseUrl": ".",
+    "baseUrl": "/portfolio-website/",
     "paths": {
       "@/*": ["./src/*"]
     }
