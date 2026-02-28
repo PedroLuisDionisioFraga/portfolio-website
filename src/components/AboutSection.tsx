@@ -4,14 +4,16 @@ import { useRef, useState } from "react";
 import { Cpu, Layers, Award, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 
 const stats = [
-  { icon: Briefcase, value: "3", label: "Years Experience" },
+  { icon: Briefcase, value: "5", label: "Years Experience" },
+  // TODO: Fix it
   { icon: Layers, value: "5+", label: "Projects Delivered" },
+  // TODO: Fix it
   { icon: Award, value: "3", label: "Certifications" },
-  { icon: Cpu, value: "Jr. Analyst", label: "Current Role" },
+  { icon: Cpu, value: "Mid-level Embedded Systems Engineer", label: "Current Role" },
 ];
 
 const coverLetterParagraphs = [
-  "Currently, I work with firmware development as a junior analyst. My work so far involves firmware testing, bug fixing, and the development of new features.",
+  "Currently, I work with firmware development as a Mid-level analyst. My work so far involves firmware testing, bug fixing, and the development of new features.",
   "In my experience with firmware, I have worked with photocells connected to each other and to a gateway via a mesh network, and the gateway communicated with our APIs via cellular network, where we displayed information on energy consumption in watts, brightness, luminaire status, and dimming, where I performed bench tests and corrected any bugs found. I worked with pulse counters that were connected to simple pulse outputs, for example, in water or gas meters, and communicated with our system via API that used the NB-IoT network as a communication protocol. I have some personal projects with ESP32 and Arduino in the Smart Home area, such as controlling LED strips via Bluetooth, a presence sensor to turn on lights, and an energy sensor to measure energy consumption.",
   "In my experience with embedded Linux, I participated in the development of the Rockchip PX3 gateway where the photocells connected. I learned and tested the hardware and Linux image in the mesh network connection, cellular network, I/O pins, connection and management of the company's VPN network, certificates and static routes, Ethernet inputs with PoE, and battery control with PMIC.",
 ];
@@ -61,15 +63,14 @@ const AboutSection = () => {
             className="space-y-4"
           >
             <p className="text-muted-foreground leading-relaxed">
-              Firmware developer specializing in Silabs, ESP32, and STM microcontrollers, focusing on
-              developing and optimizing firmware, communication protocols (MQTT, Bluetooth, WiFi,
-              cellular, mesh), along with code reviews, project supervision, and test documentation.
+              Specialized in firmware development, I am constantly seeking projects
+              to enhance my skills and increase my experience, focusing on performance
+              improvement, reduced power consumption, and data security in embedded IoT products,
+              along with cybersecurity.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Passionate and committed to driving technological advancements to improve performance,
-              consumption, and security of embedded products, with a strong focus on IoT,
-              cybersecurity, and ultra-low-power devices. Open to global opportunities in collaborative
-              environments, whether in-person, remote, or hybrid.
+              I am open to freelance opportunities and collaborative environments,
+              whether on-site, remote, or hybrid.
             </p>
 
             {/* Cover Letter */}
