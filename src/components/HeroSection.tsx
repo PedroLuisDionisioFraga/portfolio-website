@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const specialties = ["Firmware Development", "IoT Systems", "Cellular/MQTT/BLE/WiFi/Mesh", "Silabs · ESP32 · STM32", "Embedded Linux"];
+const specialties = ["Firmware Development", "IoT Systems", "Cellular/MQTT/BLE/WiFi/Mesh", "Silabs/ESP32/STM32/Arduino", "Embedded Linux"];
 
 const HeroSection = () => {
   return (
