@@ -1,38 +1,43 @@
-# embed-genius-folio
+# Portfolio Website
 
-Personal portfolio website for a Mid-level Embedded Systems Engineer. Built with a dark, circuit-board aesthetic using React and Tailwind CSS, showcasing firmware experience, hardware platforms, projects, and professional history.
+Personal portfolio website for **Pedro Luis Dionísio Fraga**, a Mid-level Embedded Systems Engineer. Built with a dark, circuit-board aesthetic using React and Tailwind CSS, showcasing firmware experience, hardware platforms, projects, and professional history.
+
+**Live:** [pedroluisdionisiofraga.github.io/portfolio-website](https://PedroLuisDionisioFraga.github.io/portfolio-website/)
 
 ## Sections
 
-- **Hero** – Specialties and animated circuit-line intro
-- **About** – Profile, cover letter, and key stats
-- **Skills** – Languages, MCU platforms, tools, and communication protocols
+- **Hero** – Animated circuit-line intro with specialties (Firmware, IoT, Cellular/MQTT/BLE/WiFi/Mesh, Silabs/ESP32/STM32, Embedded Linux)
+- **About** – Profile photo, cover letter, and key stats (5 years experience, 5+ projects, 3 certifications)
+- **Skills** – Languages (C/C++, Bash, Python, Rust), MCU platforms (ESP32, EFR32/EFM32, STM32, RP2040/RP2350, RPi CM4), tools, and communication protocols
 - **Projects** – Smart Farm, Park Here, Energy Consumption Prediction, Smart Lab
-- **Experience** – Work history at Nouvenn IoT and INATEL
-- **Education** – Academic background
-- **Contact** – Contact form
+- **Experience** – Work history at Nouvenn IoT (Mid-level Engineer & IoT Firmware Intern) and INATEL (Lab Monitor & Research Fellow)
+- **Education** – B.Sc. Computer Engineering (INATEL, 2025) and embedded systems certifications
+- **Contact** – Contact form with email and social links (GitHub, LinkedIn)
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Build tool | Vite |
-| Language | TypeScript |
-| UI framework | React |
-| Component library | shadcn-ui (Radix UI) |
-| Styling | Tailwind CSS |
+| Build tool | Vite 7 |
+| Language | TypeScript 5 |
+| UI framework | React 18 |
+| Component library | shadcn/ui (Radix UI) |
+| Styling | Tailwind CSS 3 |
 | Animations | Framer Motion |
 | Charts | Recharts |
+| Routing | React Router 6 |
 | Data fetching | TanStack Query |
+| Forms | React Hook Form + Zod |
 | Package manager | Bun |
-| Testing | Vitest |
+| Testing | Vitest + Testing Library |
+| Deployment | GitHub Pages (gh-pages) |
 
 ## Getting Started
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
-cd embed-genius-folio
+git clone https://github.com/PedroLuisDionisioFraga/portfolio-website.git
+cd portfolio-website
 
 # Install dependencies
 bun install
@@ -52,6 +57,7 @@ bun run dev
 | `bun run lint` | Run ESLint |
 | `bun run test` | Run tests once with Vitest |
 | `bun run test:watch` | Run Vitest in watch mode |
+| `bun run deploy` | Build and deploy to GitHub Pages |
 
 ## Project Structure
 
@@ -66,7 +72,8 @@ src/
 │   ├── EducationSection.tsx
 │   ├── ContactSection.tsx
 │   ├── Navbar.tsx
-│   └── ui/             # shadcn-ui primitives
+│   ├── NavLink.tsx
+│   └── ui/             # shadcn/ui primitives
 ├── pages/
 │   ├── Index.tsx       # Main page layout
 │   └── NotFound.tsx
@@ -77,9 +84,10 @@ src/
 
 ## Deployment
 
-Build the project and serve the `dist/` folder with any static hosting provider (Vercel, Netlify, GitHub Pages, etc.):
+The site is deployed to **GitHub Pages** via the `gh-pages` package:
 
 ```sh
-bun run build
-# deploy the dist/ directory
+bun run deploy
 ```
+
+This runs `vite build` and publishes the `dist/` directory to the `gh-pages` branch. The app uses `/portfolio-website` as its base path for correct asset and route resolution.
