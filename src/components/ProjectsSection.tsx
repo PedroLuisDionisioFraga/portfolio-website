@@ -1,37 +1,39 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, ChevronUp, Wifi, Zap, BarChart2, Home } from "lucide-react";
+import { ChevronDown, ChevronUp, Wifi, Zap, BarChart2, Home, PhoneIcon, TableCellsSplit } from "lucide-react";
+import { Cell } from "recharts";
 
 const projects = [
   {
     icon: Wifi,
     title: "Smart Farm",
     summary: "Mobile application with embedded system integration via MQTT protocol for remote farm monitoring.",
-    details: "Developed during my undergraduate research fellowship. Integrated an embedded system with a mobile app using MQTT for lightweight, real-time data exchange. The system enabled remote monitoring and control of farm sensors, bridging hardware and software layers.",
-    tags: ["MQTT", "Embedded Systems", "Mobile", "IoT"],
+    details: "Developed during my undergraduate research fellowship. Integrated an ESP32 dev board with a mobile app using MQTT for lightweight, real-time data exchange. The system enabled remote monitoring and control of farm sensors, bridging hardware and software layers.",
+    tags: ["ESP32", "Wi-Fi", "MQTT", "DHT11", "LDR", "HD-38", "IoT"],
   },
   {
     icon: BarChart2,
     title: "Park Here",
     summary: "YoloV8-based parking space analysis system integrated with a mobile application.",
     details: "Used YoloV8 object detection to identify occupied and available parking spaces from camera feeds. Integrated real-time analysis results with a mobile application, displaying live occupancy data. Focused on applying computer vision in a practical urban mobility use case.",
-    tags: ["YoloV8", "Python", "Computer Vision", "Mobile"],
+    tags: ["Python", "YoloV8", "Computer Vision", "Mobile", "Parking"],
   },
   {
     icon: Zap,
     title: "Energy Consumption Prediction",
     summary: "LSTM and GRU neural networks for energy consumption forecasting based on historical data.",
-    details: "Implemented and compared LSTM and GRU recurrent architectures to predict energy usage patterns. Trained on time-series datasets of past consumption. The model outputs short-term forecasts useful for demand planning and efficiency improvements in smart grid applications.",
-    tags: ["LSTM", "GRU", "Python", "Machine Learning", "Time-Series"],
+    details: "Also developed during my undergraduate research fellowship. Implemented and compared LSTM and GRU recurrent architectures to predict energy usage patterns. Trained on time-series datasets of past consumption. The model outputs short-term forecasts useful for demand planning and efficiency improvements in smart grid applications.",
+    tags: ["Python", "LSTM", "GRU", "Machine Learning", "Time-Series"],
   },
   {
-    icon: Home,
-    title: "Smart Home (Personal)",
-    summary: "ESP32/Arduino smart home projects: BLE-controlled LED strips, presence sensor, and energy monitor.",
-    details: "Built several personal IoT projects: LED strip control via Bluetooth using ESP32, a PIR-based presence sensor to automate lighting, and an energy sensor measuring real-time power consumption of my gaming/development setup and air conditioning.",
-    tags: ["ESP32", "Arduino", "BLE", "Smart Home", "IoT"],
+    icon: TableCellsSplit,
+    title: "Smart Lab",
+    summary: "Web application built with Next.js, integrated with a server and SQL database for managing lab system.",
+    details: "A Next.js web application developed and integrated with a backend server and a SQL database to handle user authentication, device management, and data logging to manage a smart lab environment, such as lab access, air conditioning, power consumption per workbench, opening and closing curtains, and turning the television on and off using an IR sensor.",
+    tags: ["JavaScript", "Next.js", "Web", "VS1838B KY-022", "KY-005"],
   },
+  // TODO: Add my personal projects
 ];
 
 const ProjectCard = ({ project, index, inView }: { project: typeof projects[0]; index: number; inView: boolean }) => {
