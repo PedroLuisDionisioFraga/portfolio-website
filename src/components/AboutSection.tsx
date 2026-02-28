@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Cpu, Layers, Award, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
+import profileImg from "/public/profile.jpeg";
 
 const stats = [
   { icon: Briefcase, value: "5", label: "Years Experience" },
@@ -46,7 +47,7 @@ const AboutSection = () => {
             {/* Profile picture */}
             <div className="relative w-64 h-64 mx-auto md:mx-0 rounded-lg border border-primary/30 border-glow overflow-hidden bg-secondary">
               <img
-                src="/profile.jpeg"
+                src={profileImg}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
