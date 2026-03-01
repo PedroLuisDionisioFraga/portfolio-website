@@ -13,11 +13,35 @@ const ContactSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: t("contact.toastTitle"), description: t("contact.toastDescription") });
-    setForm({ name: "", email: "", message: "" });
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `Portfolio contact from ${form.name}`,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast({ title: t("contact.toastTitle"), description: t("contact.toastDescription") });
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        toast({ title: "Error", description: data.message ?? "Something went wrong. Please try again.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Error", description: "Network error. Please try again.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -65,8 +89,8 @@ const ContactSection = () => {
               required
               className="bg-card border-border focus:border-primary"
             />
-            <Button type="submit" className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 border-glow w-full">
-              <Send className="h-4 w-4 mr-2" /> {t("contact.send")}
+            <Button type="submit" disabled={sending} className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 border-glow w-full">
+              <Send className="h-4 w-4 mr-2" /> {sending ? "Sending…" : t("contact.send")}
             </Button>
           </motion.form>
 
