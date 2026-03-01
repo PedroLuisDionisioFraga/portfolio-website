@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, Terminal, Globe, ChevronDown } from "lucide-react";
+import { Menu, Terminal, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import {
@@ -20,9 +20,10 @@ const navKeys = [
 ];
 
 const languages = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "pt-BR", label: "Português", flag: "🇧🇷" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "en", label: "English", flagIso: "us" },
+  { code: "pt-BR", label: "Português (BR)", flagIso: "br" },
+  { code: "pt-PT", label: "Português (PT)", flagIso: "pt" },
+  { code: "es", label: "Español", flagIso: "es" },
 ];
 
 const LanguageDropdown = () => {
@@ -33,21 +34,21 @@ const LanguageDropdown = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="mr-2 flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold border border-primary/40 rounded-full text-primary hover:bg-primary/10 transition-colors">
-          <Globe className="h-3.5 w-3.5" />
-          <span>{current.flag} {current.code.toUpperCase()}</span>
+          <span className={`fi fi-${current.flagIso} rounded-sm`} style={{ fontSize: "1rem", lineHeight: 1 }} />
+          <span>{current.code.toUpperCase()}</span>
           <ChevronDown className="h-3 w-3" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="min-w-[140px] bg-background border-border">
+      <DropdownMenuContent align="end" className="min-w-[160px] bg-background border-border">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => i18n.changeLanguage(lang.code)}
-            className={`font-mono text-xs cursor-pointer ${
+            className={`font-mono text-xs cursor-pointer gap-2 ${
               i18n.language === lang.code ? "text-primary font-bold" : "text-muted-foreground"
             }`}
           >
-            <span className="mr-2">{lang.flag}</span>
+            <span className={`fi fi-${lang.flagIso} rounded-sm`} style={{ fontSize: "1.1rem", lineHeight: 1 }} />
             {lang.label}
           </DropdownMenuItem>
         ))}
@@ -118,7 +119,7 @@ const Navbar = () => {
                         : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                   >
-                    <span>{lang.flag}</span>
+                    <span className={`fi fi-${lang.flagIso} rounded-sm`} style={{ fontSize: "1.2rem", lineHeight: 1 }} />
                     {lang.label}
                   </button>
                 ))}
