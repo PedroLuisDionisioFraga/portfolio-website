@@ -11,7 +11,7 @@ const statKeys = [
   { icon: Layers, value: "5+", labelKey: "about.stats.projectsDelivered" },
   // TODO: Fix it
   { icon: Award, value: "3", labelKey: "about.stats.certifications" },
-  { icon: Cpu, value: "Mid-level Embedded Systems Engineer", labelKey: "about.stats.currentRole" },
+  { icon: Cpu, value: "Embedded Systems Engineer", labelKey: "about.stats.currentRole" },
 ];
 
 const AboutSection = () => {
